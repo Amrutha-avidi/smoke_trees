@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // Enable CORS (Cross-Origin Resource Sharing)
 app.use(cors({
   origin: 'http://localhost:3001', // Your React app's URL
-  methods: [ 'POST'],
+  methods: [ 'GET','POST'],
   allowedHeaders: ['Content-Type']
 }));
 
@@ -73,6 +73,10 @@ app.post('/register', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Failed to register user and add address' });
   }
+});
+
+app.get('/', (req, res) => {
+  res.send('Server is up and running!');
 });
 
 // Start the server
