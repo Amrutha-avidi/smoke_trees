@@ -8,7 +8,7 @@
     ],
     "routes": [
       {
-        "src": "/register",
+        "src": "/",
         "dest": "index.js"
       }
     ]
