@@ -7,7 +7,7 @@ const RegisterForm = () => {
   const [address, setAddress] = useState('');
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
-
+axios.defaults.withCredentials = true
   const handleSubmit = async (e) => {
     e.preventDefault();
     setResponse(null);  // Clear previous responses
@@ -21,7 +21,7 @@ const RegisterForm = () => {
 
     try {
       // Send POST request to the backend
-      const res = await axios.post('http://localhost:5000/register', data);
+      const res = await axios.post('https://smoke-trees-api.vercel.app/register', data);
       setResponse(res.data);  // Show success message from backend
     } catch (err) {
       // Handle error
