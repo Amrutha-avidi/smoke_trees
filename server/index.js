@@ -7,15 +7,14 @@ const connectDB = require('./config/db');
 
 connectDB();
 
-// Initialize Express App
 const app = express();
 
-// Middleware for parsing JSON requests
+// Middleware
 app.use(bodyParser.json());
 
-// Enable CORS (Cross-Origin Resource Sharing)
+// Enable CORS 
 app.use(cors({
-  origin: 'http://localhost:3001', // Your React app's URL
+  origin: 'https://smoke-trees-client.vercel.app',
   methods: [ 'GET','POST'],
   allowedHeaders: ['Content-Type']
 }));
